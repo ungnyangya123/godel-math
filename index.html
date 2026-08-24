@@ -262,6 +262,58 @@ blockquote {
 
 
 /* ==================================================
+   일러스트
+================================================== */
+
+.math-illustration {
+
+    margin: 45px 0;
+
+    padding: 25px;
+
+    background: #f0eee8;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+}
+
+
+.math-illustration svg {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+.dark-illustration {
+
+    background: #20232b;
+
+}
+
+
+.illustration-caption {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #858a96;
+
+}
+
+
+/* ==================================================
    괴델 수 변환기
 ================================================== */
 
@@ -633,6 +685,13 @@ footer {
 
     }
 
+
+    .math-illustration {
+
+        padding: 12px;
+
+    }
+
 }
 
 </style>
@@ -652,7 +711,7 @@ footer {
     <div class="cover-content">
 
         <div class="category">
-            수학 동아리 · 순수수학 특집
+            수학 동아리 · 철수세미
         </div>
 
 
@@ -688,6 +747,341 @@ footer {
 ================================================== -->
 
 <section class="section">
+
+
+<!-- ==================================================
+     암호 문제 일러스트
+================================================== -->
+
+<div class="math-illustration">
+
+    <svg
+        viewBox="0 0 900 430"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <!-- 배경 -->
+
+        <rect
+            width="900"
+            height="430"
+            rx="18"
+            fill="#ddd9ce"
+        />
+
+
+        <!-- 칠판 -->
+
+        <rect
+            x="45"
+            y="45"
+            width="545"
+            height="315"
+            rx="8"
+            fill="#242a2a"
+        />
+
+        <rect
+            x="58"
+            y="58"
+            width="519"
+            height="289"
+            rx="3"
+            fill="#2c3432"
+            stroke="#5d625d"
+            stroke-width="3"
+        />
+
+
+        <!-- 칠판 상단 제목 -->
+
+        <text
+            x="85"
+            y="100"
+            fill="#f0eee2"
+            font-size="24"
+            font-family="Georgia, serif"
+        >
+            알파벳 암호
+        </text>
+
+
+        <!-- 알파벳 대응 -->
+
+        <text
+            x="90"
+            y="155"
+            fill="#f5f3e9"
+            font-size="25"
+            font-family="Georgia, serif"
+        >
+            A = 1
+        </text>
+
+        <text
+            x="90"
+            y="195"
+            fill="#f5f3e9"
+            font-size="25"
+            font-family="Georgia, serif"
+        >
+            B = 2
+        </text>
+
+        <text
+            x="90"
+            y="235"
+            fill="#f5f3e9"
+            font-size="25"
+            font-family="Georgia, serif"
+        >
+            C = 3
+        </text>
+
+        <text
+            x="205"
+            y="195"
+            fill="#c9cdc5"
+            font-size="28"
+            font-family="Georgia, serif"
+        >
+            ...
+        </text>
+
+        <text
+            x="290"
+            y="235"
+            fill="#f5f3e9"
+            font-size="25"
+            font-family="Georgia, serif"
+        >
+            Z = 26
+        </text>
+
+
+        <!-- 문제 -->
+
+        <line
+            x1="85"
+            y1="270"
+            x2="550"
+            y2="270"
+            stroke="#777d76"
+            stroke-width="1"
+        />
+
+        <text
+            x="90"
+            y="320"
+            fill="#ffffff"
+            font-size="28"
+            font-family="monospace"
+        >
+            13, 1, 20, 8 = ?
+        </text>
+
+
+        <!-- 분필 -->
+
+        <rect
+            x="90"
+            y="332"
+            width="70"
+            height="6"
+            rx="3"
+            fill="#e8e5d8"
+            opacity="0.8"
+        />
+
+
+        <!-- 학생 몸 -->
+
+        <ellipse
+            cx="720"
+            cy="355"
+            rx="95"
+            ry="30"
+            fill="#b7b2a8"
+            opacity="0.35"
+        />
+
+        <!-- 몸통 -->
+
+        <path
+            d="
+                M655 355
+                C660 305 685 275 730 275
+                C775 275 800 305 805 355
+                Z
+            "
+            fill="#3d5278"
+        />
+
+
+        <!-- 목 -->
+
+        <rect
+            x="710"
+            y="235"
+            width="35"
+            height="45"
+            rx="10"
+            fill="#d9ad8d"
+        />
+
+
+        <!-- 얼굴 -->
+
+        <ellipse
+            cx="728"
+            cy="195"
+            rx="62"
+            ry="72"
+            fill="#e2b696"
+        />
+
+
+        <!-- 머리카락 -->
+
+        <path
+            d="
+                M670 185
+                C660 135 690 105 735 110
+                C780 113 795 145 785 185
+                C770 155 755 145 730 145
+                C705 145 690 158 670 185
+                Z
+            "
+            fill="#25272c"
+        />
+
+
+        <!-- 귀 -->
+
+        <ellipse
+            cx="670"
+            cy="200"
+            rx="10"
+            ry="17"
+            fill="#d4a583"
+        />
+
+        <ellipse
+            cx="786"
+            cy="200"
+            rx="10"
+            ry="17"
+            fill="#d4a583"
+        />
+
+
+        <!-- 눈 -->
+
+        <ellipse
+            cx="708"
+            cy="195"
+            rx="5"
+            ry="4"
+            fill="#202124"
+        />
+
+        <ellipse
+            cx="748"
+            cy="195"
+            rx="5"
+            ry="4"
+            fill="#202124"
+        />
+
+
+        <!-- 고민하는 입 -->
+
+        <path
+            d="M715 225 Q728 216 741 225"
+            fill="none"
+            stroke="#7c4e43"
+            stroke-width="3"
+        />
+
+
+        <!-- 팔 -->
+
+        <path
+            d="
+                M690 295
+                C660 280 645 265 625 250
+            "
+            fill="none"
+            stroke="#3d5278"
+            stroke-width="25"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="
+                M625 250
+                C605 235 600 220 608 210
+            "
+            fill="none"
+            stroke="#d9ad8d"
+            stroke-width="16"
+            stroke-linecap="round"
+        />
+
+
+        <!-- 손으로 턱 괴기 -->
+
+        <circle
+            cx="615"
+            cy="205"
+            r="10"
+            fill="#d9ad8d"
+        />
+
+
+        <!-- 생각 구름 -->
+
+        <circle
+            cx="815"
+            cy="95"
+            r="24"
+            fill="#fbfaf7"
+        />
+
+        <circle
+            cx="850"
+            cy="75"
+            r="18"
+            fill="#fbfaf7"
+        />
+
+        <circle
+            cx="875"
+            cy="55"
+            r="12"
+            fill="#fbfaf7"
+        />
+
+        <text
+            x="815"
+            y="103"
+            text-anchor="middle"
+            fill="#5269d8"
+            font-size="24"
+            font-family="Georgia"
+        >
+            ?
+        </text>
+
+    </svg>
+
+
+    <div class="illustration-caption">
+        숫자에 알파벳을 대응시키면 13, 1, 20, 8은 어떤 단어가 될까요?
+    </div>
+
+</div>
+
 
 <p class="lead">
 
@@ -813,6 +1207,168 @@ footer {
 
 
 <!-- ==================================================
+     수학 일러스트
+================================================== -->
+
+<div class="math-illustration dark-illustration">
+
+    <svg
+        viewBox="0 0 900 360"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <rect
+            width="900"
+            height="360"
+            rx="20"
+            fill="#20232b"
+        />
+
+        <ellipse
+            cx="450"
+            cy="180"
+            rx="330"
+            ry="115"
+            fill="none"
+            stroke="#5269d8"
+            stroke-width="2"
+            opacity="0.35"
+        />
+
+        <ellipse
+            cx="450"
+            cy="180"
+            rx="240"
+            ry="80"
+            fill="none"
+            stroke="#9eafff"
+            stroke-width="1"
+            opacity="0.25"
+        />
+
+        <text
+            x="450"
+            y="195"
+            text-anchor="middle"
+            fill="#ffffff"
+            font-size="72"
+            font-family="Georgia, serif"
+        >
+            𝑁
+        </text>
+
+        <text
+            x="125"
+            y="130"
+            fill="#9eafff"
+            font-size="35"
+            font-family="Georgia"
+        >
+            ∀
+        </text>
+
+        <text
+            x="205"
+            y="275"
+            fill="#d6d8df"
+            font-size="32"
+            font-family="Georgia"
+        >
+            ∃
+        </text>
+
+        <text
+            x="700"
+            y="125"
+            fill="#9eafff"
+            font-size="35"
+            font-family="Georgia"
+        >
+            ∑
+        </text>
+
+        <text
+            x="730"
+            y="275"
+            fill="#d6d8df"
+            font-size="32"
+            font-family="Georgia"
+        >
+            →
+        </text>
+
+        <text
+            x="350"
+            y="75"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            1
+        </text>
+
+        <text
+            x="530"
+            y="75"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            2
+        </text>
+
+        <text
+            x="270"
+            y="190"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            3
+        </text>
+
+        <text
+            x="625"
+            y="190"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            5
+        </text>
+
+        <text
+            x="380"
+            y="310"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            7
+        </text>
+
+        <text
+            x="520"
+            y="310"
+            fill="#aeb5c8"
+            font-size="20"
+            font-family="monospace"
+        >
+            11
+        </text>
+
+    </svg>
+
+
+    <div class="illustration-caption">
+        수학의 문장도 숫자로 표현할 수 있다면, 수학은 자기 자신을 바라볼 수 있게 됩니다.
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
      3. 괴델 번호화
 ================================================== -->
 
@@ -852,6 +1408,190 @@ footer {
 = → 15
 &nbsp;&nbsp;&nbsp;
 x → 18
+
+</div>
+
+
+<!-- ==================================================
+     괴델 번호화 일러스트
+================================================== -->
+
+<div class="math-illustration">
+
+    <svg
+        viewBox="0 0 900 300"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <g
+            font-family="Georgia, serif"
+            text-anchor="middle"
+        >
+
+            <text
+                x="90"
+                y="95"
+                font-size="55"
+                fill="#202124"
+            >
+                x
+            </text>
+
+            <text
+                x="180"
+                y="95"
+                font-size="55"
+                fill="#202124"
+            >
+                +
+            </text>
+
+            <text
+                x="270"
+                y="95"
+                font-size="55"
+                fill="#202124"
+            >
+                1
+            </text>
+
+            <text
+                x="360"
+                y="95"
+                font-size="55"
+                fill="#202124"
+            >
+                =
+            </text>
+
+            <text
+                x="450"
+                y="95"
+                font-size="55"
+                fill="#202124"
+            >
+                y
+            </text>
+
+        </g>
+
+
+        <line
+            x1="120"
+            y1="145"
+            x2="330"
+            y2="145"
+            stroke="#5269d8"
+            stroke-width="3"
+        />
+
+        <polygon
+            points="330,145 315,137 315,153"
+            fill="#5269d8"
+        />
+
+
+        <g
+            font-family="monospace"
+            text-anchor="middle"
+            fill="#5269d8"
+        >
+
+            <text
+                x="90"
+                y="215"
+                font-size="28"
+            >
+                18
+            </text>
+
+            <text
+                x="180"
+                y="215"
+                font-size="28"
+            >
+                11
+            </text>
+
+            <text
+                x="270"
+                y="215"
+                font-size="28"
+            >
+                2
+            </text>
+
+            <text
+                x="360"
+                y="215"
+                font-size="28"
+            >
+                15
+            </text>
+
+            <text
+                x="450"
+                y="215"
+                font-size="28"
+            >
+                19
+            </text>
+
+        </g>
+
+
+        <line
+            x1="500"
+            y1="145"
+            x2="720"
+            y2="145"
+            stroke="#5269d8"
+            stroke-width="3"
+        />
+
+        <polygon
+            points="720,145 705,137 705,153"
+            fill="#5269d8"
+        />
+
+
+        <rect
+            x="750"
+            y="75"
+            width="100"
+            height="140"
+            rx="15"
+            fill="#15171d"
+        />
+
+        <text
+            x="800"
+            y="125"
+            text-anchor="middle"
+            fill="#9eafff"
+            font-size="18"
+            font-family="Arial"
+        >
+            GÖDEL
+        </text>
+
+        <text
+            x="800"
+            y="170"
+            text-anchor="middle"
+            fill="white"
+            font-size="26"
+            font-family="monospace"
+        >
+            𝑁
+        </text>
+
+    </svg>
+
+
+    <div class="illustration-caption">
+        기호 하나하나에 번호를 부여하면 수학 문장을 하나의 숫자로 표현할 수 있습니다.
+    </div>
 
 </div>
 
@@ -1147,6 +1887,139 @@ INTERACTIVE · 직접 해보세요
 <h2>
 🪞 수학이 자기 자신을 바라보기 시작했어요
 </h2>
+
+
+<!-- ==================================================
+     자기참조 일러스트
+================================================== -->
+
+<div class="math-illustration dark-illustration">
+
+    <svg
+        viewBox="0 0 900 330"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+        <!-- 거울 -->
+
+        <rect
+            x="315"
+            y="35"
+            width="270"
+            height="260"
+            rx="135"
+            fill="#15171d"
+            stroke="#9eafff"
+            stroke-width="4"
+        />
+
+
+        <!-- 거울 속 수식 -->
+
+        <text
+            x="450"
+            y="135"
+            text-anchor="middle"
+            fill="#ffffff"
+            font-size="27"
+            font-family="Georgia, serif"
+        >
+            G
+        </text>
+
+        <text
+            x="450"
+            y="175"
+            text-anchor="middle"
+            fill="#ffffff"
+            font-size="21"
+            font-family="Georgia, serif"
+        >
+            “나는 증명할 수 없다”
+        </text>
+
+        <text
+            x="450"
+            y="215"
+            text-anchor="middle"
+            fill="#9eafff"
+            font-size="18"
+            font-family="monospace"
+        >
+            Gödel sentence
+        </text>
+
+
+        <!-- 왼쪽 기호 -->
+
+        <text
+            x="115"
+            y="115"
+            fill="#9eafff"
+            font-size="45"
+            font-family="Georgia"
+        >
+            ∃
+        </text>
+
+        <text
+            x="175"
+            y="245"
+            fill="#d6d8df"
+            font-size="38"
+            font-family="Georgia"
+        >
+            ∀
+        </text>
+
+
+        <!-- 오른쪽 기호 -->
+
+        <text
+            x="700"
+            y="115"
+            fill="#9eafff"
+            font-size="45"
+            font-family="Georgia"
+        >
+            ∑
+        </text>
+
+        <text
+            x="755"
+            y="245"
+            fill="#d6d8df"
+            font-size="38"
+            font-family="Georgia"
+        >
+            ℕ
+        </text>
+
+
+        <!-- 화살표 -->
+
+        <path
+            d="M250 165 C275 145 285 145 310 150"
+            fill="none"
+            stroke="#5269d8"
+            stroke-width="3"
+        />
+
+        <path
+            d="M590 150 C615 145 625 145 650 165"
+            fill="none"
+            stroke="#5269d8"
+            stroke-width="3"
+        />
+
+    </svg>
+
+
+    <div class="illustration-caption">
+        괴델 번호화를 통해 형식체계는 자신의 문장에 대해 말할 수 있게 됩니다.
+    </div>
+
+</div>
 
 
 <p>
@@ -1579,9 +2452,10 @@ INTERACTIVE · 직접 해보세요
 
 <footer>
 
-수학 동아리 온라인 잡지 · 순수수학 특집
+수학 동아리 · 철수세미
 
 </footer>
+
 
 
 </main>
@@ -1860,12 +2734,24 @@ function makeGodelNumber() {
 
     try {
 
+
         /* 1. 문장 → 기호 번호 */
 
         const numbers =
             symbolToNumbers(
                 input
             );
+
+
+        /* 빈 입력 방지 */
+
+        if (numbers.length === 0) {
+
+            throw new Error(
+                "문장을 하나 이상 입력해주세요."
+            );
+
+        }
 
 
         /* 2. 기호 번호 → 괴델 수 */
