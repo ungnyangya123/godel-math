@@ -75,8 +75,6 @@ body {
 }
 
 
-/* 기존 기호 배경 */
-
 .cover::after {
 
     content:
@@ -106,746 +104,14 @@ body {
 
     position: relative;
 
-    z-index: 10;
-
-}
-
-
-/* ==================================================
-   첫 장면 · 칠판
-================================================== */
-
-.cover-classroom {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-
-}
-
-
-/* 칠판 */
-
-.blackboard {
-
-    position: absolute;
-
-    width: min(62vw, 820px);
-
-    height: min(43vw, 500px);
-
-    left: 5%;
-
-    top: 7%;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.025),
-            rgba(255,255,255,0.025)
-        ),
-        #202c2a;
-
-    border:
-        12px solid #5d4430;
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 18px 35px rgba(0,0,0,0.45),
-        inset 0 0 35px rgba(0,0,0,0.35);
-
-    transform:
-        perspective(1000px)
-        rotateY(3deg);
-
-}
-
-
-/* 칠판 질감 */
-
-.blackboard::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 12px,
-            rgba(255,255,255,0.012) 13px
-        );
-
-    opacity: 0.8;
-
-}
-
-
-/* 분필 글씨 */
-
-.chalk-line {
-
-    position: absolute;
-
-    top: 16%;
-
-    left: 7%;
-
-    color: #e9e7dc;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(18px, 2.2vw, 31px);
-
-    font-weight: bold;
-
-    letter-spacing: 0.025em;
-
-    transform: rotate(-1deg);
-
-    text-shadow:
-        0 0 2px rgba(255,255,255,0.5);
-
-}
-
-
-.chalk-question {
-
-    position: absolute;
-
-    top: 39%;
-
-    left: 13%;
-
-    color: #f1efe2;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(34px, 5vw, 68px);
-
-    font-weight: bold;
-
-    letter-spacing: 0.04em;
-
-    transform: rotate(-2deg);
-
-    text-shadow:
-        0 0 3px rgba(255,255,255,0.5);
-
-}
-
-
-.chalk-small {
-
-    position: absolute;
-
-    left: 8%;
-
-    bottom: 13%;
-
-    color: #c0c6bd;
-
-    font-family:
-        "Noto Serif KR",
-        Georgia,
-        serif;
-
-    font-size:
-        clamp(11px, 1.2vw, 16px);
-
-    opacity: 0.72;
-
-    transform: rotate(-1deg);
-
-}
-
-
-/* ==================================================
-   학생 장면
-================================================== */
-
-.student-scene {
-
-    position: absolute;
-
-    right: 3%;
-
-    bottom: 0;
-
-    width: min(32vw, 380px);
-
-    height: min(48vw, 540px);
-
-}
-
-
-/* 학생 */
-
-.student {
-
-    position: absolute;
-
-    width: 205px;
-
-    height: 325px;
-
-    right: 48px;
-
-    bottom: 115px;
-
-}
-
-
-/* 머리카락 */
-
-.student-hair {
-
-    position: absolute;
-
-    width: 122px;
-
-    height: 108px;
-
-    left: 40px;
-
-    top: 7px;
-
-    background: #13151a;
-
-    border-radius:
-        50% 52% 43% 45%;
-
-    transform: rotate(-5deg);
-
-    box-shadow:
-        -10px 8px 0 #13151a,
-        8px -5px 0 #13151a;
-
-    z-index: 3;
-
-}
-
-
-/* 앞머리 */
-
-.student-hair::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 82px;
-
-    height: 47px;
-
-    left: 18px;
-
-    top: 27px;
-
-    background: #13151a;
-
-    border-radius:
-        10% 60% 40% 20%;
-
-    transform: rotate(-7deg);
-
-}
-
-
-/* 얼굴 */
-
-.student-face {
-
-    position: absolute;
-
-    width: 97px;
-
-    height: 115px;
-
-    left: 52px;
-
-    top: 47px;
-
-    background: #d9a77e;
-
-    border-radius:
-        48% 48% 45% 45%;
-
-    transform: rotate(-2deg);
-
     z-index: 2;
 
-    box-shadow:
-        inset -5px -3px 0 rgba(120,70,45,0.08);
-
 }
 
-
-/* 귀 */
-
-.student-face::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 17px;
-
-    height: 27px;
-
-    left: -7px;
-
-    top: 47px;
-
-    background: #cf9a73;
-
-    border-radius: 50%;
-
-}
-
-
-.student-face::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 17px;
-
-    height: 27px;
-
-    right: -7px;
-
-    top: 47px;
-
-    background: #cf9a73;
-
-    border-radius: 50%;
-
-}
-
-
-/* 눈 */
-
-.eye {
-
-    position: absolute;
-
-    width: 8px;
-
-    height: 5px;
-
-    background: #202124;
-
-    border-radius: 50%;
-
-    top: 48px;
-
-}
-
-
-.left-eye {
-    left: 24px;
-}
-
-
-.right-eye {
-    right: 24px;
-}
-
-
-/* 눈썹 */
-
-.eyebrow {
-
-    position: absolute;
-
-    width: 18px;
-
-    height: 3px;
-
-    background: #4a372d;
-
-    border-radius: 5px;
-
-    top: 38px;
-
-}
-
-
-.left-brow {
-
-    left: 19px;
-
-    transform: rotate(-10deg);
-
-}
-
-
-.right-brow {
-
-    right: 19px;
-
-    transform: rotate(8deg);
-
-}
-
-
-/* 코 */
-
-.nose {
-
-    position: absolute;
-
-    width: 9px;
-
-    height: 14px;
-
-    left: 43px;
-
-    top: 51px;
-
-    border-right:
-        2px solid rgba(90,50,35,0.38);
-
-    transform: rotate(8deg);
-
-}
-
-
-/* 입 */
-
-.mouth {
-
-    position: absolute;
-
-    width: 18px;
-
-    height: 7px;
-
-    left: 39px;
-
-    top: 78px;
-
-    border-bottom:
-        2px solid #593b35;
-
-    border-radius:
-        0 0 50% 50%;
-
-}
-
-
-/* 고민 표시 */
-
-.student-face .thought {
-
-    position: absolute;
-
-    display: none;
-
-}
-
-
-/* 목 */
-
-.student-neck {
-
-    position: absolute;
-
-    width: 36px;
-
-    height: 37px;
-
-    left: 82px;
-
-    top: 145px;
-
-    background: #c9926b;
-
-    z-index: 1;
-
-}
-
-
-/* 몸 / 교복 */
-
-.student-body {
-
-    position: absolute;
-
-    width: 152px;
-
-    height: 150px;
-
-    left: 25px;
-
-    top: 161px;
-
-    background: #303743;
-
-    border-radius:
-        45px 45px 12px 12px;
-
-    z-index: 0;
-
-}
-
-
-/* 셔츠 칼라 */
-
-.shirt-collar {
-
-    position: absolute;
-
-    top: 5px;
-
-    width: 43px;
-
-    height: 57px;
-
-    background: #e7e5df;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            70% 100%,
-            35% 70%
-        );
-
-}
-
-
-.left-collar {
-
-    left: 30px;
-
-}
-
-
-.right-collar {
-
-    right: 30px;
-
-    transform: scaleX(-1);
-
-}
-
-
-/* 넥타이 */
-
-.tie {
-
-    position: absolute;
-
-    top: 7px;
-
-    left: 67px;
-
-    width: 18px;
-
-    height: 70px;
-
-    background: #171b26;
-
-    clip-path:
-        polygon(
-            25% 0,
-            75% 0,
-            100% 78%,
-            50% 100%,
-            0 78%
-        );
-
-}
-
-
-/* 교복 단추 */
-
-.student-body::after {
-
-    content:
-        "•\A•\A•";
-
-    white-space: pre;
-
-    position: absolute;
-
-    left: 73px;
-
-    top: 76px;
-
-    color: #c5c7cc;
-
-    font-size: 11px;
-
-    line-height: 22px;
-
-}
-
-
-/* 팔 */
-
-.student-arm {
-
-    position: absolute;
-
-    width: 130px;
-
-    height: 37px;
-
-    right: -24px;
-
-    top: 207px;
-
-    background: #303743;
-
-    border-radius: 20px;
-
-    transform: rotate(-22deg);
-
-    z-index: 3;
-
-}
-
-
-/* 손 */
-
-.student-hand {
-
-    position: absolute;
-
-    width: 34px;
-
-    height: 28px;
-
-    right: -38px;
-
-    top: 221px;
-
-    background: #d9a77e;
-
-    border-radius: 50%;
-
-    transform: rotate(-18deg);
-
-    z-index: 4;
-
-}
-
-
-/* ==================================================
-   책상
-================================================== */
-
-.student-desk {
-
-    position: absolute;
-
-    width: 335px;
-
-    height: 165px;
-
-    right: -10px;
-
-    bottom: 0;
-
-    z-index: 5;
-
-}
-
-
-.desk-top {
-
-    position: absolute;
-
-    width: 100%;
-
-    height: 29px;
-
-    top: 18px;
-
-    background: #76553a;
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 7px 10px rgba(0,0,0,0.3);
-
-}
-
-
-.desk-front {
-
-    position: absolute;
-
-    width: 248px;
-
-    height: 83px;
-
-    left: 42px;
-
-    top: 47px;
-
-    background: #60452f;
-
-    transform:
-        perspective(300px)
-        rotateX(-8deg);
-
-}
-
-
-.desk-leg {
-
-    position: absolute;
-
-    width: 15px;
-
-    height: 92px;
-
-    top: 70px;
-
-    background: #4b392a;
-
-}
-
-
-.left-leg {
-    left: 55px;
-}
-
-
-.right-leg {
-    right: 55px;
-}
-
-
-/* ==================================================
-   표지 글씨
-================================================== */
 
 .category {
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
 
@@ -882,9 +148,7 @@ body {
 
     margin-top: 60px;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 12px;
 
@@ -948,6 +212,124 @@ p {
 .lead {
 
     font-size: 21px;
+
+}
+
+
+/* ==================================================
+   알파벳 이름표 예시
+================================================== */
+
+.alphabet-box {
+
+    background: #f0eee8;
+
+    border: 1px solid #dedbd4;
+
+    border-left: 4px solid #5269d8;
+
+    border-radius: 10px;
+
+    padding: 24px 25px;
+
+    margin: 35px 0;
+
+}
+
+
+.alphabet-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.12em;
+
+    color: #5269d8;
+
+    margin-bottom: 15px;
+
+}
+
+
+.alphabet-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.alphabet-list span {
+
+    background: #fbfaf7;
+
+    border: 1px solid #dedbd4;
+
+    border-radius: 6px;
+
+    padding: 5px 8px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+}
+
+
+.alphabet-example {
+
+    background: white;
+
+    border: 1px solid #dedbd4;
+
+    border-radius: 8px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+}
+
+
+.alphabet-example .number {
+
+    color: #5269d8;
+
+    font-family: monospace;
+
+    font-weight: bold;
+
+}
+
+
+.alphabet-example .arrow {
+
+    color: #888;
+
+    margin: 0 8px;
+
+}
+
+
+.alphabet-example .word {
+
+    font-weight: bold;
+
+    letter-spacing: 0.12em;
 
 }
 
@@ -1021,9 +403,7 @@ blockquote {
 
 .tool-label {
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 12px;
 
@@ -1068,9 +448,7 @@ blockquote {
 
 .table-title {
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
 
@@ -1189,9 +567,7 @@ blockquote {
 
     color: #9eafff;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
 
@@ -1260,9 +636,7 @@ blockquote {
 
 .note {
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 12px;
 
@@ -1336,9 +710,7 @@ footer {
 
     color: #777;
 
-    font-family:
-        Arial,
-        sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 12px;
 
@@ -1349,87 +721,11 @@ footer {
    모바일
 ================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     .cover {
 
         min-height: 90vh;
-
-        align-items: flex-end;
-
-        padding-bottom: 55px;
-
-    }
-
-
-    .blackboard {
-
-        width: 88vw;
-
-        height: 43vh;
-
-        left: 6%;
-
-        top: 5%;
-
-    }
-
-
-    .chalk-line {
-
-        font-size: 15px;
-
-        top: 17%;
-
-        left: 6%;
-
-    }
-
-
-    .chalk-question {
-
-        font-size: 32px;
-
-        top: 40%;
-
-        left: 11%;
-
-    }
-
-
-    .chalk-small {
-
-        display: none;
-
-    }
-
-
-    .student-scene {
-
-        transform: scale(0.58);
-
-        transform-origin:
-            bottom right;
-
-        right: -55px;
-
-        bottom: -10px;
-
-    }
-
-
-    .cover-content {
-
-        margin-top: 0;
-
-        width: 100%;
-
-    }
-
-
-    .cover h1 {
-
-        font-size: clamp(38px, 11vw, 60px);
 
     }
 
@@ -1454,50 +750,14 @@ footer {
 
     }
 
-}
 
+    .alphabet-example {
 
-/* ==================================================
-   아주 작은 화면
-================================================== */
-
-@media (max-width: 420px) {
-
-    .blackboard {
-
-        height: 38vh;
-
-    }
-
-
-    .chalk-line {
-
-        font-size: 12px;
-
-    }
-
-
-    .chalk-question {
-
-        font-size: 27px;
-
-    }
-
-
-    .student-scene {
-
-        transform: scale(0.48);
-
-        right: -80px;
+        font-size: 17px;
 
     }
 
 }
-
-
-/* ==================================================
-   JAVASCRIPT에서 사용하는 스타일
-================================================== */
 
 </style>
 
@@ -1513,174 +773,29 @@ footer {
 
 <header class="cover">
 
-
-    <!-- 칠판 + 학생 장면 -->
-
-    <div class="cover-classroom">
-
-
-        <!-- 칠판 -->
-
-        <div class="blackboard">
-
-
-            <div class="chalk-line">
-
-                A = 1&nbsp;&nbsp;&nbsp;
-                B = 2&nbsp;&nbsp;&nbsp;
-                C = 3&nbsp;&nbsp;&nbsp;
-                ···&nbsp;&nbsp;&nbsp;
-                Z = 26
-
-            </div>
-
-
-            <div class="chalk-question">
-
-                13, 1, 20, 8 = ?
-
-            </div>
-
-
-            <div class="chalk-small">
-
-                알파벳과 숫자의 대응 관계를 이용해 답을 찾아보자.
-
-            </div>
-
-
-        </div>
-
-
-        <!-- 학생 -->
-
-        <div class="student-scene">
-
-
-            <div class="student">
-
-
-                <!-- 머리 -->
-
-                <div class="student-hair"></div>
-
-
-                <!-- 얼굴 -->
-
-                <div class="student-face">
-
-                    <div class="eye left-eye"></div>
-
-                    <div class="eye right-eye"></div>
-
-
-                    <div class="eyebrow left-brow"></div>
-
-                    <div class="eyebrow right-brow"></div>
-
-
-                    <div class="nose"></div>
-
-                    <div class="mouth"></div>
-
-                </div>
-
-
-                <!-- 목 -->
-
-                <div class="student-neck"></div>
-
-
-                <!-- 교복 -->
-
-                <div class="student-body">
-
-
-                    <div class="shirt-collar left-collar"></div>
-
-                    <div class="shirt-collar right-collar"></div>
-
-
-                    <div class="tie"></div>
-
-
-                </div>
-
-
-                <!-- 팔 -->
-
-                <div class="student-arm"></div>
-
-
-                <!-- 손 -->
-
-                <div class="student-hand"></div>
-
-
-            </div>
-
-
-            <!-- 책상 -->
-
-            <div class="student-desk">
-
-
-                <div class="desk-top"></div>
-
-                <div class="desk-front"></div>
-
-
-                <div class="desk-leg left-leg"></div>
-
-                <div class="desk-leg right-leg"></div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-    <!-- 표지 글씨 -->
-
     <div class="cover-content">
 
-
         <div class="category">
-
-            수학 동아리 · 철수세미
-
+            철수세미 · 수학 동아리
         </div>
 
 
         <h1>
-
             수학은 모든 것을<br>
-
             증명할 수 있을까요?
-
         </h1>
 
 
         <div class="cover-subtitle">
-
             쿠르트 괴델과 불완전성 정리
-
         </div>
 
 
         <div class="scroll">
-
             SCROLL TO READ ↓
-
         </div>
 
-
     </div>
-
 
 </header>
 
@@ -1689,9 +804,7 @@ footer {
 <main class="magazine">
 
 
-
 <article class="article">
-
 
 
 <!-- ==================================================
@@ -1712,6 +825,64 @@ footer {
 </p>
 
 
+<!-- ==================================================
+     알파벳 이름표 예시
+================================================== -->
+
+<div class="alphabet-box">
+
+    <div class="alphabet-title">
+        🔎 알파벳에 숫자 이름표를 붙인다면?
+    </div>
+
+    <div class="alphabet-list">
+
+        <span>A = 1</span>
+        <span>B = 2</span>
+        <span>C = 3</span>
+        <span>D = 4</span>
+        <span>E = 5</span>
+        <span>F = 6</span>
+        <span>G = 7</span>
+        <span>H = 8</span>
+        <span>I = 9</span>
+        <span>J = 10</span>
+        <span>K = 11</span>
+        <span>L = 12</span>
+        <span>M = 13</span>
+        <span>N = 14</span>
+        <span>O = 15</span>
+        <span>P = 16</span>
+        <span>Q = 17</span>
+        <span>R = 18</span>
+        <span>S = 19</span>
+        <span>T = 20</span>
+        <span>U = 21</span>
+        <span>V = 22</span>
+        <span>W = 23</span>
+        <span>X = 24</span>
+        <span>Y = 25</span>
+        <span>Z = 26</span>
+
+    </div>
+
+
+    <div class="alphabet-example">
+
+        <span class="number">13, 1, 20, 8</span>
+
+        <span class="arrow">→</span>
+
+        <span class="word">M A T H</span>
+
+        <span class="arrow">→</span>
+
+        <b>MATH</b>
+
+    </div>
+
+</div>
+
 
 <p>
 
@@ -1730,7 +901,6 @@ footer {
 </p>
 
 
-
 <p>
 
 그런데 여러분,
@@ -1742,7 +912,6 @@ footer {
 </b>
 
 </p>
-
 
 
 <p>
@@ -1765,13 +934,9 @@ footer {
 
 <section class="section">
 
-
 <h2>
-
 힐베르트의 꿈
-
 </h2>
-
 
 
 <p>
@@ -1784,7 +949,6 @@ footer {
 <b>다비트 힐베르트</b>가 있었죠.
 
 </p>
-
 
 
 <p>
@@ -1804,7 +968,6 @@ footer {
 </p>
 
 
-
 <p>
 
 그런데 몇 년 뒤,
@@ -1816,13 +979,9 @@ footer {
 </p>
 
 
-
 <p>
-
 그런데 도대체 어떻게 증명한 걸까요?
-
 </p>
-
 
 
 <blockquote>
@@ -1832,7 +991,6 @@ footer {
 가 있답니다!
 
 </blockquote>
-
 
 </section>
 
@@ -1844,13 +1002,9 @@ footer {
 
 <section class="section">
 
-
 <h2>
-
 🏷️ 수학에도 이름표를 붙여 볼까요?
-
 </h2>
-
 
 
 <p>
@@ -1858,7 +1012,6 @@ footer {
 아까 문제에서는 알파벳에 숫자 이름표를 붙였죠?
 
 </p>
-
 
 
 <p>
@@ -1870,7 +1023,6 @@ footer {
 <b>수학에서 사용하는 기호</b>였어요.
 
 </p>
-
 
 
 <div class="equation">
@@ -1888,7 +1040,6 @@ x → 18
 </div>
 
 
-
 <p>
 
 그러면
@@ -1896,13 +1047,11 @@ x → 18
 </p>
 
 
-
 <div class="equation">
 
 x + 1 = y
 
 </div>
-
 
 
 <p>
@@ -1913,7 +1062,6 @@ x + 1 = y
 </p>
 
 
-
 <p>
 
 예를 들어 이 잡지에서 사용하는 기호표에 따르면
@@ -1921,21 +1069,15 @@ x + 1 = y
 </p>
 
 
-
 <div class="equation">
 
 x + 1 = y
-
 <br><br>
-
 ↓
-
 <br><br>
-
 18, 11, 2, 15, 19
 
 </div>
-
 
 
 <p>
@@ -1943,7 +1085,6 @@ x + 1 = y
 이렇게 수학식 자체를 숫자의 열로 표현할 수 있어요.
 
 </p>
-
 
 
 <p>
@@ -1957,14 +1098,12 @@ x + 1 = y
 </p>
 
 
-
 <p>
 
 이렇게 논리식이나 증명에 자연수를 대응시키는 방법을
 <b>괴델 번호화(Gödel numbering)</b>라고 해요.
 
 </p>
-
 
 </section>
 
@@ -1978,19 +1117,13 @@ x + 1 = y
 
 
 <div class="tool-label">
-
 INTERACTIVE · 직접 해보세요
-
 </div>
 
 
-
 <h2>
-
 🧩 진짜 괴델 수를 만들어 볼까요?
-
 </h2>
-
 
 
 <p class="tool-description">
@@ -2004,20 +1137,14 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <div class="symbol-table">
 
-
 <div class="table-title">
-
 현재 사용하고 있는 기호표
-
 </div>
 
 
-
 <div class="symbol-list">
-
 
 <span>0 → 1</span>
 <span>1 → 2</span>
@@ -2045,40 +1172,28 @@ INTERACTIVE · 직접 해보세요
 
 <span>^ → 21</span>
 
-
 </div>
 
 </div>
-
 
 
 <div class="input-area">
 
-
 <input
-
     id="godelInput"
-
     value="x+1=y"
-
     placeholder="예: x+1=y"
-
 >
 
 
 <button onclick="makeGodelNumber()">
-
     변환하기
-
 </button>
-
 
 </div>
 
 
-
 <div id="godelOutput">
-
 
 <div class="godel-step">
 
@@ -2087,9 +1202,7 @@ INTERACTIVE · 직접 해보세요
 
 </div>
 
-
 </div>
-
 
 
 <p class="note">
@@ -2111,13 +1224,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="section">
 
-
 <h2>
-
 🤔 그런데 숫자로 바꿔서 뭐 하려고요?
-
 </h2>
-
 
 
 <p>
@@ -2129,7 +1238,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 맞아요.
@@ -2139,14 +1247,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그런데 이 방법을 사용하면
 아주 재미있는 일이 가능해져요.
 
 </p>
-
 
 
 <p>
@@ -2164,7 +1270,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <div class="equation">
 
 2 + 3 = 5
@@ -2172,13 +1277,11 @@ INTERACTIVE · 직접 해보세요
 </div>
 
 
-
 <p>
 
 이건 숫자에 대한 명제예요.
 
 </p>
-
 
 
 <p>
@@ -2192,14 +1295,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그런데 수학 문장 자체를
 숫자로 바꿀 수 있다면 어떨까요?
 
 </p>
-
 
 
 <blockquote>
@@ -2212,13 +1313,11 @@ INTERACTIVE · 직접 해보세요
 </blockquote>
 
 
-
 <p>
 
 괴델은 바로 이 점을 이용했어요.
 
 </p>
-
 
 </section>
 
@@ -2230,13 +1329,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="section">
 
-
 <h2>
-
 🪞 수학이 자기 자신을 바라보기 시작했어요
-
 </h2>
-
 
 
 <p>
@@ -2249,14 +1344,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그리고 괴델은 여기서
 아주 특별한 문장을 만들어 냈어요.
 
 </p>
-
 
 
 <blockquote>
@@ -2268,7 +1361,6 @@ INTERACTIVE · 직접 해보세요
 </blockquote>
 
 
-
 <p>
 
 어라?
@@ -2276,7 +1368,6 @@ INTERACTIVE · 직접 해보세요
 뭔가 이상하지 않나요?
 
 </p>
-
 
 
 <p>
@@ -2287,13 +1378,11 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 <b>“나는 증명할 수 없어요.”</b>
 
 </p>
-
 
 
 <p>
@@ -2304,13 +1393,11 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그런데 만약 이 문장을 증명할 수 있다면 어떨까요?
 
 </p>
-
 
 
 <p>
@@ -2325,13 +1412,11 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그러면 체계에 문제가 생기겠죠.
 
 </p>
-
 
 
 <p>
@@ -2344,7 +1429,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 이것이 바로
@@ -2352,7 +1436,6 @@ INTERACTIVE · 직접 해보세요
 의 핵심이에요.
 
 </p>
-
 
 </section>
 
@@ -2364,13 +1447,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="section">
 
-
 <h2>
-
 😱 수학에 풀 수 없는 문제가 있다고요?
-
 </h2>
-
 
 
 <p>
@@ -2384,13 +1463,11 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 조금 더 정확하게 말하면 그렇지는 않아요.
 
 </p>
-
 
 
 <p>
@@ -2409,7 +1486,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 즉, 수학이 아무것도 증명할 수 없다는 이야기가 아니에요.
@@ -2417,13 +1493,11 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 오히려 수학은 엄청나게 많은 것을 증명할 수 있어요.
 
 </p>
-
 
 
 <p>
@@ -2440,7 +1514,6 @@ INTERACTIVE · 직접 해보세요
 
 </p>
 
-
 </section>
 
 
@@ -2451,13 +1524,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="section">
 
-
 <h2>
-
 🚪 그런데 이게 끝이 아니었어요
-
 </h2>
-
 
 
 <p>
@@ -2465,7 +1534,6 @@ INTERACTIVE · 직접 해보세요
 괴델은 여기서 한 걸음 더 나아갔어요.
 
 </p>
-
 
 
 <p>
@@ -2477,7 +1545,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 괴델의
@@ -2485,7 +1552,6 @@ INTERACTIVE · 직접 해보세요
 는 여기에서도 놀라운 결과를 보여줘요.
 
 </p>
-
 
 
 <p>
@@ -2499,14 +1565,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <blockquote>
 
 “나는 내가 완벽하게 안전하다는 걸
 내 힘만으로 증명할 수 없어요.”
 
 </blockquote>
-
 
 </section>
 
@@ -2518,13 +1582,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="section">
 
-
 <h2>
-
 🧠 괴델이 정말 대단한 이유
-
 </h2>
-
 
 
 <p>
@@ -2535,7 +1595,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <blockquote>
 
 “그냥 ‘나는 증명할 수 없다’라는 말을
@@ -2544,14 +1603,12 @@ INTERACTIVE · 직접 해보세요
 </blockquote>
 
 
-
 <p>
 
 하지만 괴델의 업적은
 단순히 재미있는 문장을 만든 게 아니에요.
 
 </p>
-
 
 
 <p>
@@ -2566,14 +1623,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그리고 그 시작점에는
 우리가 아까 해봤던 것과 비슷한 발상이 있었어요.
 
 </p>
-
 
 
 <blockquote>
@@ -2585,7 +1640,6 @@ INTERACTIVE · 직접 해보세요
 </blockquote>
 
 
-
 <p>
 
 알파벳에 숫자 이름표를 붙이면
@@ -2593,7 +1647,6 @@ INTERACTIVE · 직접 해보세요
 처럼 암호를 풀 수 있죠.
 
 </p>
-
 
 
 <p>
@@ -2609,7 +1662,6 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 그리고 그 결과,
@@ -2621,7 +1673,6 @@ INTERACTIVE · 직접 해보세요
 </b>
 
 </p>
-
 
 </section>
 
@@ -2637,13 +1688,9 @@ INTERACTIVE · 직접 해보세요
 
 <section class="ending">
 
-
 <h2>
-
 🌌 수학의 끝에는 무엇이 있을까요?
-
 </h2>
-
 
 
 <p>
@@ -2654,14 +1701,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 오히려 수학의 세계가
 우리가 생각했던 것보다 훨씬 깊다는 걸 보여줬어요.
 
 </p>
-
 
 
 <p>
@@ -2672,7 +1717,6 @@ INTERACTIVE · 직접 해보세요
 </b>
 
 </p>
-
 
 
 <p>
@@ -2688,14 +1732,12 @@ INTERACTIVE · 직접 해보세요
 </p>
 
 
-
 <p>
 
 수학의 한계를 알아내기 위해
 수학을 사용한 거죠.
 
 </p>
-
 
 
 <blockquote>
@@ -2709,7 +1751,6 @@ INTERACTIVE · 직접 해보세요
 </blockquote>
 
 
-
 <p>
 
 여러분이 언젠가 새로운 수학을 발견하게 된다면,
@@ -2718,14 +1759,13 @@ INTERACTIVE · 직접 해보세요
 
 </p>
 
-
 </section>
 
 
 
 <footer>
 
-수학 동아리 · 철수세미
+철수세미 · 수학 동아리 온라인 잡지
 
 </footer>
 
@@ -3007,7 +2047,6 @@ function makeGodelNumber() {
 
     try {
 
-
         /* 1. 문장 → 기호 번호 */
 
         const numbers =
@@ -3189,7 +2228,7 @@ function makeGodelNumber() {
 
                     현재 기호표에서는
 
-                    0~9, +, -, *, /, =,
+                    0~9, +, -, *, /, =
                     (, ), x, y, z, ^
 
                     만 사용할 수 있어요.
