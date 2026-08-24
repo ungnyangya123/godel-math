@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>수학은 모든 것을 증명할 수 있을까요?</title>
+
+
+<style>
+
+/* ==================================================
+   기본 설정
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background: #e8e6df;
+
+    color: #202124;
+
+    font-family:
+        Georgia,
+        "Noto Serif KR",
+        serif;
+
+    line-height: 1.9;
+}
+
+
+/* ==================================================
+   표지
+================================================== */
+
+.cover {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(100,120,255,0.18),
+            transparent 35%
+        ),
+        #15171d;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        70px
+        clamp(25px, 8vw, 120px);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.cover::after {
+
+    content:
+        "∀   ∃   ∑   →   ℕ   0   1   2   3   4";
+
+    position: absolute;
+
+    font-size:
+        clamp(50px, 10vw, 150px);
+
+    white-space: nowrap;
+
+    opacity: 0.035;
+
+    transform: rotate(-8deg);
+
+    left: -5%;
+
+    top: 45%;
+
+}
+
+
+.cover-content {
+
+    max-width: 950px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.category {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.15em;
+
+    color: #aab8ff;
+
+}
+
+
+.cover h1 {
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    line-height: 1.12;
+
+    margin: 25px 0;
+
+}
+
+
+.cover-subtitle {
+
+    font-size:
+        clamp(18px, 2.5vw, 25px);
+
+    color: #d6d8df;
+
+}
+
+
+.scroll {
+
+    margin-top: 60px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #888;
+
+}
+
+
+/* ==================================================
+   본문
+================================================== */
+
+.magazine {
+
+    max-width: 930px;
+
+    margin: auto;
+
+    background: #fbfaf7;
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,0.12);
+
+}
+
+
+.article {
+
+    padding:
+        80px
+        clamp(25px, 7vw, 85px);
+
+}
+
+
+.section {
+
+    margin-bottom: 90px;
+
+}
+
+
+.section h2 {
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+
+}
+
+
+p {
+
+    font-size: 17px;
+
+}
+
+
+.lead {
+
+    font-size: 21px;
+
+}
+
+
+/* ==================================================
+   강조 박스
+================================================== */
+
+blockquote {
+
+    margin: 35px 0;
+
+    padding:
+        18px
+        25px;
+
+    background: #f0eee8;
+
+    border-left:
+        4px solid #5269d8;
+
+    font-size: 19px;
+
+}
+
+
+/* ==================================================
+   수식
+================================================== */
+
+.equation {
+
+    background: white;
+
+    border: 1px solid #dedbd4;
+
+    padding: 25px;
+
+    margin: 30px 0;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    overflow-x: auto;
+
+}
+
+
+/* ==================================================
+   괴델 수 변환기
+================================================== */
+
+.tool {
+
+    background: #15171d;
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    margin: 60px 0;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25);
+
+}
+
+
+.tool-label {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.12em;
+
+    color: #9eafff;
+
+}
+
+
+.tool h2 {
+
+    margin-top: 8px;
+
+}
+
+
+.tool-description {
+
+    color: #c9cbd2;
+
+}
+
+
+/* 기호표 */
+
+.symbol-table {
+
+    margin:
+        25px
+        0;
+
+    padding: 20px;
+
+    background: #20232b;
+
+    border-radius: 12px;
+
+}
+
+
+.table-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    color: #aeb5c8;
+
+    margin-bottom: 12px;
+
+}
+
+
+.symbol-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+}
+
+
+.symbol-list span {
+
+    padding:
+        5px
+        8px;
+
+    background: #2c303a;
+
+    border-radius: 6px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+}
+
+
+/* 입력창 */
+
+.input-area {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.input-area input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+}
+
+
+.input-area button {
+
+    padding:
+        14px
+        20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #9eafff;
+
+    color: #111522;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.input-area button:hover {
+
+    filter: brightness(1.1);
+
+}
+
+
+/* 결과 */
+
+.godel-step {
+
+    margin-top: 18px;
+
+    padding: 20px;
+
+    background: #0d0f13;
+
+    border:
+        1px solid #30343d;
+
+    border-radius: 10px;
+
+}
+
+
+.godel-step-title {
+
+    color: #9eafff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.godel-formula {
+
+    overflow-x: auto;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    word-break: break-word;
+
+}
+
+
+.godel-big-number {
+
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    font-size: 15px;
+
+    color: #dce3ff;
+
+    word-break: break-all;
+
+}
+
+
+.mapping {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.mapping-item {
+
+    background: #292d36;
+
+    padding:
+        6px
+        9px;
+
+    border-radius: 6px;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+}
+
+
+.note {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #9297a3;
+
+}
+
+
+.success {
+
+    color: #a8e6a3;
+
+    font-weight: bold;
+
+}
+
+
+.error {
+
+    color: #ff9c9c;
+
+    font-weight: bold;
+
+}
+
+
+/* ==================================================
+   마지막 페이지
+================================================== */
+
+.ending {
+
+    background: #15171d;
+
+    color: white;
+
+    padding:
+        80px
+        clamp(25px, 7vw, 85px);
+
+}
+
+
+.ending h2 {
+
+    font-size: 34px;
+
+}
+
+
+.ending blockquote {
+
+    background: #252832;
+
+    color: white;
+
+    border-color: #9eafff;
+
+}
+
+
+/* ==================================================
+   푸터
+================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================================
+   모바일
+================================================== */
+
+@media (max-width: 600px) {
+
+    .cover {
+
+        min-height: 90vh;
+
+    }
+
+
+    .article {
+
+        padding-top: 50px;
+
+    }
+
+
+    p {
+
+        font-size: 16px;
+
+    }
+
+
+    .input-area {
+
+        flex-direction: column;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     표지
+================================================== -->
+
+<header class="cover">
+
+    <div class="cover-content">
+
+        <div class="category">
+            수학 동아리 · 순수수학 특집
+        </div>
+
+
+        <h1>
+            수학은 모든 것을<br>
+            증명할 수 있을까요?
+        </h1>
+
+
+        <div class="cover-subtitle">
+            쿠르트 괴델과 불완전성 정리
+        </div>
+
+
+        <div class="scroll">
+            SCROLL TO READ ↓
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<main class="magazine">
+
+
+<article class="article">
+
+
+<!-- ==================================================
+     1. 도입
+================================================== -->
+
+<section class="section">
+
+<p class="lead">
+
+이런 문제 풀어본 적, 다들 한 번쯤 있지 않나요?
+
+각 알파벳에 숫자 이름표를 주고,
+그 이름표를 찾아서 정체를 밝히는
+아주 재밌고 쉬운 문제죠!
+
+</p>
+
+
+<p>
+
+예를 들어 저 남학생이 고민하고 있는 문제에서
+<b>13</b>은 알파벳 M의 이름표니까
+첫 번째 숫자는 M,
+<b>1</b>은 알파벳 A의 이름표니까
+두 번째 숫자는 A...
+
+이런 식으로 찾아가면 답이
+
+<b>MATH</b>,
+
+즉 수학이라는 건 누구나 쉽게 풀 수 있을 거예요.
+
+</p>
+
+
+<p>
+
+그런데 여러분,
+
+<b>
+이렇게 간단한 아이디어를 이용해
+20세기 수학의 흐름을 뒤흔든 사람이 있다는 사실,
+알고 있나요?
+</b>
+
+</p>
+
+
+<p>
+
+바로
+
+<b>쿠르트 괴델(Kurt Gödel)</b>
+
+입니다!
+
+</p>
+
+</section>
+
+
+
+<!-- ==================================================
+     2. 힐베르트
+================================================== -->
+
+<section class="section">
+
+<h2>
+힐베르트의 꿈
+</h2>
+
+
+<p>
+
+괴델이 활동하던 20세기 초,
+수학자들은 수학을 더욱 엄밀하고 확실한 학문으로
+만들기 위해 노력하고 있었어요.
+
+그 중심에는 당대의 위대한 수학자인
+<b>다비트 힐베르트</b>가 있었죠.
+
+</p>
+
+
+<p>
+
+힐베르트는 수학 세계가 하나의 엄밀한 체계로
+세워지길 원했어요.
+
+그는
+
+<b>
+수학 세계의 모두가 만족할 수 있는 좋은 규칙을 만든다면,
+수학 세계의 모든 문제를 해결할 수 있을 것
+</b>
+
+이라고 생각했죠.
+
+</p>
+
+
+<p>
+
+그런데 몇 년 뒤,
+괴델이 등장해 아무리 잘 만든 체계라고 하더라도
+그 안에서 해결할 수 없는 문제가 존재한다는
+<b>불완전성 정리</b>를 발표해
+20세기 수학을 뒤흔들어 놓았어요.
+
+</p>
+
+
+<p>
+그런데 도대체 어떻게 증명한 걸까요?
+</p>
+
+
+<blockquote>
+
+놀랍게도 그 시작에는
+<b>아까 우리가 풀었던 암호 문제와 비슷한 아이디어</b>
+가 있답니다!
+
+</blockquote>
+
+</section>
+
+
+
+<!-- ==================================================
+     3. 괴델 번호화
+================================================== -->
+
+<section class="section">
+
+<h2>
+🏷️ 수학에도 이름표를 붙여 볼까요?
+</h2>
+
+
+<p>
+
+아까 문제에서는 알파벳에 숫자 이름표를 붙였죠?
+
+</p>
+
+
+<p>
+
+괴델도 비슷한 생각을 했어요.
+
+하지만 괴델이 숫자 이름표를 붙인 대상은
+알파벳이 아니라
+<b>수학에서 사용하는 기호</b>였어요.
+
+</p>
+
+
+<div class="equation">
+
+0 → 1
+&nbsp;&nbsp;&nbsp;
+1 → 2
+&nbsp;&nbsp;&nbsp;
++ → 11
+&nbsp;&nbsp;&nbsp;
+= → 15
+&nbsp;&nbsp;&nbsp;
+x → 18
+
+</div>
+
+
+<p>
+
+그러면
+
+</p>
+
+
+<div class="equation">
+
+x + 1 = y
+
+</div>
+
+
+<p>
+
+같은 수학식도
+숫자들의 모임으로 바꿀 수 있겠죠?
+
+</p>
+
+
+<p>
+
+예를 들어 이 잡지에서 사용하는 기호표에 따르면
+
+</p>
+
+
+<div class="equation">
+
+x + 1 = y
+<br><br>
+↓
+<br><br>
+18, 11, 2, 15, 19
+
+</div>
+
+
+<p>
+
+이렇게 수학식 자체를 숫자의 열로 표현할 수 있어요.
+
+</p>
+
+
+<p>
+
+그런데 괴델은 여기서 멈추지 않았어요.
+
+수학식뿐만 아니라
+<b>수학식에 대한 설명이나 증명까지도 숫자로 나타낼 수 있다는 점</b>
+을 이용했어요.
+
+</p>
+
+
+<p>
+
+이렇게 논리식이나 증명에 자연수를 대응시키는 방법을
+<b>괴델 번호화(Gödel numbering)</b>라고 해요.
+
+</p>
+
+</section>
+
+
+
+<!-- ==================================================
+     4. 인터랙티브 괴델 수
+================================================== -->
+
+<section class="tool">
+
+
+<div class="tool-label">
+INTERACTIVE · 직접 해보세요
+</div>
+
+
+<h2>
+🧩 진짜 괴델 수를 만들어 볼까요?
+</h2>
+
+
+<p class="tool-description">
+
+아래에 수학적 문장을 입력해 보세요.
+
+기호에 번호를 붙인 뒤,
+소수의 거듭제곱을 이용해
+하나의 자연수인 괴델 수로 바꿔볼게요.
+
+</p>
+
+
+<div class="symbol-table">
+
+<div class="table-title">
+현재 사용하고 있는 기호표
+</div>
+
+
+<div class="symbol-list">
+
+<span>0 → 1</span>
+<span>1 → 2</span>
+<span>2 → 3</span>
+<span>3 → 4</span>
+<span>4 → 5</span>
+<span>5 → 6</span>
+<span>6 → 7</span>
+<span>7 → 8</span>
+<span>8 → 9</span>
+<span>9 → 10</span>
+
+<span>+ → 11</span>
+<span>- → 12</span>
+<span>* → 13</span>
+<span>/ → 14</span>
+<span>= → 15</span>
+
+<span>( → 16</span>
+<span>) → 17</span>
+
+<span>x → 18</span>
+<span>y → 19</span>
+<span>z → 20</span>
+
+<span>^ → 21</span>
+
+</div>
+
+</div>
+
+
+<div class="input-area">
+
+<input
+    id="godelInput"
+    value="x+1=y"
+    placeholder="예: x+1=y"
+>
+
+<button onclick="makeGodelNumber()">
+    변환하기
+</button>
+
+</div>
+
+
+<div id="godelOutput">
+
+<div class="godel-step">
+
+    문장을 입력하고
+    <b>변환하기</b>를 눌러보세요!
+
+</div>
+
+</div>
+
+
+<p class="note">
+
+※ 이 체험기는 괴델 번호화의 핵심 원리를 이해하기 위해
+기호표를 단순화한 교육용 버전이에요.
+실제 괴델의 원래 번호 체계와는 차이가 있어요.
+
+</p>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     5. 왜 숫자로?
+================================================== -->
+
+<section class="section">
+
+<h2>
+🤔 그런데 숫자로 바꿔서 뭐 하려고요?
+</h2>
+
+
+<p>
+
+“문장을 숫자로 바꾸는 게 대체 무슨 의미가 있지?”
+
+이렇게 생각하실 수도 있을 거예요.
+
+</p>
+
+
+<p>
+
+맞아요.
+
+처음에는 별로 쓸모없어 보이죠.
+
+</p>
+
+
+<p>
+
+그런데 이 방법을 사용하면
+아주 재미있는 일이 가능해져요.
+
+</p>
+
+
+<p>
+
+원래 수학에서는
+
+<b>수에 대한 이야기</b>
+
+와
+
+<b>수학 문장에 대한 이야기</b>
+
+가 서로 다른 종류의 이야기처럼 보이죠.
+
+</p>
+
+
+<div class="equation">
+
+2 + 3 = 5
+
+</div>
+
+
+<p>
+
+이건 숫자에 대한 명제예요.
+
+</p>
+
+
+<p>
+
+반면
+
+“2+3=5라는 명제는 증명할 수 있다.”
+
+는 수학 문장에 대한 이야기죠.
+
+</p>
+
+
+<p>
+
+그런데 수학 문장 자체를
+숫자로 바꿀 수 있다면 어떨까요?
+
+</p>
+
+
+<blockquote>
+
+<b>
+수학 문장에 대한 이야기도
+숫자에 대한 이야기로 바꿀 수 있어요.
+</b>
+
+</blockquote>
+
+
+<p>
+
+괴델은 바로 이 점을 이용했어요.
+
+</p>
+
+</section>
+
+
+
+<!-- ==================================================
+     6. 자기 자신을 바라보는 수학
+================================================== -->
+
+<section class="section">
+
+<h2>
+🪞 수학이 자기 자신을 바라보기 시작했어요
+</h2>
+
+
+<p>
+
+수학식과 증명을 모두 숫자로 표현할 수 있다면,
+수학은 숫자를 이용해서
+<b>자기 자신의 문장과 증명에 대해서도
+이야기할 수 있게 돼요.</b>
+
+</p>
+
+
+<p>
+
+그리고 괴델은 여기서
+아주 특별한 문장을 만들어 냈어요.
+
+</p>
+
+
+<blockquote>
+
+<b>
+“나는 이 체계 안에서는 증명할 수 없어요.”
+</b>
+
+</blockquote>
+
+
+<p>
+
+어라?
+
+뭔가 이상하지 않나요?
+
+</p>
+
+
+<p>
+
+이 문장이 정말 증명되지 않는다면,
+문장이 말한 그대로예요.
+
+</p>
+
+
+<p>
+
+<b>“나는 증명할 수 없어요.”</b>
+
+</p>
+
+
+<p>
+
+실제로 증명할 수 없으니까
+이 문장은 참이 되는 거죠.
+
+</p>
+
+
+<p>
+
+그런데 만약 이 문장을 증명할 수 있다면 어떨까요?
+
+</p>
+
+
+<p>
+
+문장은
+
+“나는 증명할 수 없어요.”
+
+라고 말하고 있는데,
+실제로는 증명할 수 있게 되는 거예요.
+
+</p>
+
+
+<p>
+
+그러면 체계에 문제가 생기겠죠.
+
+</p>
+
+
+<p>
+
+즉, 충분히 강력하고 모순이 없는 수학 체계에서는
+이런 식으로
+<b>그 체계 안에서 증명할 수 없는 명제</b>
+가 만들어질 수 있다는 거예요.
+
+</p>
+
+
+<p>
+
+이것이 바로
+<b>괴델의 제1불완전성 정리</b>
+의 핵심이에요.
+
+</p>
+
+</section>
+
+
+
+<!-- ==================================================
+     7. 제1불완전성 정리
+================================================== -->
+
+<section class="section">
+
+<h2>
+😱 수학에 풀 수 없는 문제가 있다고요?
+</h2>
+
+
+<p>
+
+그렇다면 괴델은
+
+“수학에는 풀 수 없는 문제가 있어요!”
+
+라고 말한 걸까요?
+
+</p>
+
+
+<p>
+
+조금 더 정확하게 말하면 그렇지는 않아요.
+
+</p>
+
+
+<p>
+
+괴델이 말한 건
+
+<b>
+특정한 조건을 만족하는 충분히 강력하고
+모순이 없는 형식체계에서는,
+그 체계 안에서 증명할 수도 없고
+반증할 수도 없는 명제가 존재한다
+</b>
+
+는 거예요.
+
+</p>
+
+
+<p>
+
+즉, 수학이 아무것도 증명할 수 없다는 이야기가 아니에요.
+
+</p>
+
+
+<p>
+
+오히려 수학은 엄청나게 많은 것을 증명할 수 있어요.
+
+</p>
+
+
+<p>
+
+다만
+
+<b>
+아무리 규칙을 잘 만들어도
+그 규칙만으로 모든 수학적 참을
+증명할 수 있는 건 아니라는 것
+</b>
+
+이죠.
+
+</p>
+
+</section>
+
+
+
+<!-- ==================================================
+     8. 제2불완전성 정리
+================================================== -->
+
+<section class="section">
+
+<h2>
+🚪 그런데 이게 끝이 아니었어요
+</h2>
+
+
+<p>
+
+괴델은 여기서 한 걸음 더 나아갔어요.
+
+</p>
+
+
+<p>
+
+“그렇다면 우리가 만든 수학 체계에
+<b>모순이 없다는 사실 자체는
+그 체계 안에서 증명할 수 있을까요?</b>”
+
+</p>
+
+
+<p>
+
+괴델의
+<b>제2불완전성 정리</b>
+는 여기에서도 놀라운 결과를 보여줘요.
+
+</p>
+
+
+<p>
+
+충분히 강력하고 모순이 없는 형식체계는
+<b>
+자기 자신이 모순이 없다는 사실을
+그 체계 내부에서는 증명할 수 없어요.
+</b>
+
+</p>
+
+
+<blockquote>
+
+“나는 내가 완벽하게 안전하다는 걸
+내 힘만으로 증명할 수 없어요.”
+
+</blockquote>
+
+</section>
+
+
+
+<!-- ==================================================
+     9. 괴델의 진짜 대단한 점
+================================================== -->
+
+<section class="section">
+
+<h2>
+🧠 괴델이 정말 대단한 이유
+</h2>
+
+
+<p>
+
+괴델의 정리를 처음 보면
+이런 생각이 들 수도 있어요.
+
+</p>
+
+
+<blockquote>
+
+“그냥 ‘나는 증명할 수 없다’라는 말을
+만들어 놓은 것 아닌가요?”
+
+</blockquote>
+
+
+<p>
+
+하지만 괴델의 업적은
+단순히 재미있는 문장을 만든 게 아니에요.
+
+</p>
+
+
+<p>
+
+<b>
+그 문장을 실제 수학적 형식체계 안에서
+표현할 수 있도록 만든 것
+</b>
+
+이 핵심이에요.
+
+</p>
+
+
+<p>
+
+그리고 그 시작점에는
+우리가 아까 해봤던 것과 비슷한 발상이 있었어요.
+
+</p>
+
+
+<blockquote>
+
+<b>
+기호에 이름표를 붙이는 거예요.
+</b>
+
+</blockquote>
+
+
+<p>
+
+알파벳에 숫자 이름표를 붙이면
+<b>13 → M</b>
+처럼 암호를 풀 수 있죠.
+
+</p>
+
+
+<p>
+
+괴델은 이것을 훨씬 더 복잡하고 정교하게 발전시켜
+
+<b>
+수학 문장 → 자연수
+</b>
+
+라는 대응을 만들었어요.
+
+</p>
+
+
+<p>
+
+그리고 그 결과,
+수학은 놀랍게도
+
+<b>
+자기 자신의 문장과 증명에 대해서
+이야기할 수 있게 됐어요.
+</b>
+
+</p>
+
+</section>
+
+
+</article>
+
+
+
+<!-- ==================================================
+     결론
+================================================== -->
+
+<section class="ending">
+
+<h2>
+🌌 수학의 끝에는 무엇이 있을까요?
+</h2>
+
+
+<p>
+
+괴델의 불완전성 정리는
+수학을 무너뜨린 게 아니에요.
+
+</p>
+
+
+<p>
+
+오히려 수학의 세계가
+우리가 생각했던 것보다 훨씬 깊다는 걸 보여줬어요.
+
+</p>
+
+
+<p>
+
+아무리 좋은 규칙을 만들어도
+<b>
+그 규칙만으로 모든 걸 증명할 수는 없어요.
+</b>
+
+</p>
+
+
+<p>
+
+그리고 더욱 놀라운 건,
+
+<b>
+그 사실을 증명한 것 역시 수학이었다는 점
+</b>
+
+이에요.
+
+</p>
+
+
+<p>
+
+수학의 한계를 알아내기 위해
+수학을 사용한 거죠.
+
+</p>
+
+
+<blockquote>
+
+<b>
+“수학으로 모든 걸 알 수 없다면,
+우리가 아직 알지 못하는 수학의 세계에는
+무엇이 남아 있을까요?”
+</b>
+
+</blockquote>
+
+
+<p>
+
+여러분이 언젠가 새로운 수학을 발견하게 된다면,
+어쩌면 그곳에는 우리가 아직 이름조차 붙이지 못한
+새로운 세계가 기다리고 있을지도 몰라요.
+
+</p>
+
+</section>
+
+
+
+<footer>
+
+수학 동아리 온라인 잡지 · 순수수학 특집
+
+</footer>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+
+/* ==================================================
+   괴델 번호화 기호표
+================================================== */
+
+const symbols = {
+
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 6,
+    "6": 7,
+    "7": 8,
+    "8": 9,
+    "9": 10,
+
+    "+": 11,
+    "-": 12,
+    "*": 13,
+    "/": 14,
+    "=": 15,
+
+    "(": 16,
+    ")": 17,
+
+    "x": 18,
+    "y": 19,
+    "z": 20,
+
+    "^": 21
+
+};
+
+
+/* ==================================================
+   소수 생성
+================================================== */
+
+function generatePrimes(count) {
+
+    const primes = [];
+
+    let number = 2;
+
+
+    while (
+        primes.length < count
+    ) {
+
+        let isPrime = true;
+
+
+        for (
+            let i = 2;
+            i * i <= number;
+            i++
+        ) {
+
+            if (
+                number % i === 0
+            ) {
+
+                isPrime = false;
+
+                break;
+
+            }
+
+        }
+
+
+        if (isPrime) {
+
+            primes.push(number);
+
+        }
+
+
+        number++;
+
+    }
+
+
+    return primes;
+
+}
+
+
+/* ==================================================
+   문장 → 자연수열
+================================================== */
+
+function symbolToNumbers(text) {
+
+    const numbers = [];
+
+
+    for (const symbol of text) {
+
+        if (symbol === " ") {
+
+            continue;
+
+        }
+
+
+        if (
+            !(symbol in symbols)
+        ) {
+
+            throw new Error(
+                `'${symbol}'은(는) 현재 기호표에 없는 기호입니다.`
+            );
+
+        }
+
+
+        numbers.push(
+            symbols[symbol]
+        );
+
+    }
+
+
+    return numbers;
+
+}
+
+
+/* ==================================================
+   자연수열 → 괴델 수
+================================================== */
+
+function numbersToGodel(numbers) {
+
+    const primes =
+        generatePrimes(
+            numbers.length
+        );
+
+
+    let godelNumber = 1n;
+
+
+    for (
+        let i = 0;
+        i < numbers.length;
+        i++
+    ) {
+
+        const prime =
+            BigInt(primes[i]);
+
+        const exponent =
+            BigInt(numbers[i]);
+
+
+        godelNumber *=
+            prime ** exponent;
+
+    }
+
+
+    return godelNumber;
+
+}
+
+
+/* ==================================================
+   소인수분해 형태
+================================================== */
+
+function showFactorization(numbers) {
+
+    const primes =
+        generatePrimes(
+            numbers.length
+        );
+
+
+    const terms = [];
+
+
+    for (
+        let i = 0;
+        i < numbers.length;
+        i++
+    ) {
+
+        terms.push(
+
+            `${primes[i]}<sup>${numbers[i]}</sup>`
+
+        );
+
+    }
+
+
+    return terms.join(
+        " × "
+    );
+
+}
+
+
+/* ==================================================
+   HTML 특수문자 처리
+================================================== */
+
+function escapeHtml(text) {
+
+    return text
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* ==================================================
+   메인 변환 함수
+================================================== */
+
+function makeGodelNumber() {
+
+    const input =
+        document
+        .getElementById(
+            "godelInput"
+        )
+        .value;
+
+
+    const output =
+        document
+        .getElementById(
+            "godelOutput"
+        );
+
+
+    try {
+
+        /* 1. 문장 → 기호 번호 */
+
+        const numbers =
+            symbolToNumbers(
+                input
+            );
+
+
+        /* 2. 기호 번호 → 괴델 수 */
+
+        const godelNumber =
+            numbersToGodel(
+                numbers
+            );
+
+
+        /* 기호 번호 표시 */
+
+        let mappingHTML = "";
+
+
+        for (
+            const symbol of input
+        ) {
+
+            if (
+                symbol === " "
+            ) {
+
+                continue;
+
+            }
+
+
+            mappingHTML += `
+
+                <span class="mapping-item">
+
+                    ${escapeHtml(symbol)}
+
+                    →
+
+                    ${symbols[symbol]}
+
+                </span>
+
+            `;
+
+        }
+
+
+        /* 결과 출력 */
+
+        output.innerHTML = `
+
+
+            <div class="godel-step">
+
+                <div class="godel-step-title">
+
+                    ① 입력한 문장
+
+                </div>
+
+
+                <div class="godel-formula">
+
+                    ${escapeHtml(input)}
+
+                </div>
+
+            </div>
+
+
+
+            <div class="godel-step">
+
+                <div class="godel-step-title">
+
+                    ② 기호 번호화
+
+                </div>
+
+
+                <div class="mapping">
+
+                    ${mappingHTML}
+
+                </div>
+
+            </div>
+
+
+
+            <div class="godel-step">
+
+                <div class="godel-step-title">
+
+                    ③ 자연수열
+
+                </div>
+
+
+                <div class="godel-formula">
+
+                    [${numbers.join(", ")}]
+
+                </div>
+
+            </div>
+
+
+
+            <div class="godel-step">
+
+                <div class="godel-step-title">
+
+                    ④ 소수의 거듭제곱으로 표현하기
+
+                </div>
+
+
+                <div class="godel-formula">
+
+                    ${showFactorization(numbers)}
+
+                </div>
+
+            </div>
+
+
+
+            <div class="godel-step">
+
+                <div class="godel-step-title">
+
+                    ⑤ 최종 괴델 수
+
+                </div>
+
+
+                <div class="godel-big-number">
+
+                    ${godelNumber.toString()}
+
+                </div>
+
+            </div>
+
+
+        `;
+
+    }
+
+
+    catch (error) {
+
+        output.innerHTML = `
+
+            <div class="godel-step">
+
+                <div class="error">
+
+                    ⚠️ 오류
+
+                </div>
+
+
+                <p>
+
+                    ${escapeHtml(
+                        error.message
+                    )}
+
+                </p>
+
+
+                <p class="note">
+
+                    현재 기호표에서는
+
+                    0~9, +, -, *, /, =,
+                    (, ), x, y, z, ^
+
+                    만 사용할 수 있어요.
+
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ==================================================
+   Enter 키
+================================================== */
+
+document
+    .getElementById(
+        "godelInput"
+    )
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                makeGodelNumber();
+
+            }
+
+        }
+    );
+
+
+/* ==================================================
+   페이지를 열면 x+1=y 자동 실행
+================================================== */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        makeGodelNumber();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
